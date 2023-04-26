@@ -7,7 +7,7 @@ Tlux es un framework CSS altamente modular y fácil de usar escrito en Sass, que
 La estructura de archivos de Tlux es fácil de entender y seguir. Las carpetas se organizan de manera lógica y específica, y se incluyen archivos de importación para diferentes componentes del framework.
 
 
-- styles/
+- scss/
     - base/                      <!-- Reset de propiedades HTML -->
     - components/                <!-- Carpeta de componentes -->
     - elements/                  <!-- Carpeta de elementos -->
