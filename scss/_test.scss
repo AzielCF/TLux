@@ -1,0 +1,168 @@
+
+@use "sass:map";
+
+/* =======================
+     * COMPONENTS *
+========================*/
+
+.card{
+  padding: 40px;
+  background-color: #e9e9e9;
+  border-radius: 3px;
+}
+
+/**  FORM  **/
+
+$forms: (
+  outlined: (
+    border: $form-border-size solid $form-border-color,
+    background: $form-background-color,
+    padding: $form-padding-top $form-padding-left,
+    hover: (
+      border-color: $form-hover-border-color
+    ),
+    focus: (
+      border: $form-border-size solid $form-focus-border-color,
+      ),
+    disabled: (
+      border: $form-border-size solid $form-disabled-color
+    )
+  ),
+  filled: (
+    border-width: $form-border-width,
+    border-bottom: $form-border-size solid $form-border-bottom-color,
+    background-color: $form-filled-background-color,
+    padding: $form-padding-top $form-padding-left,
+    hover: (
+      border-color: $form-hover-border-color,
+      background-color: $form-hover-background-color
+    ),
+    focus: (
+      border-bottom: $form-border-size solid $form-focus-border-color
+    ),
+    disabled: (
+      border-bottom: $form-border-size solid $form-disabled-color,
+      background-color: $form-hover-background-color
+    )
+  ),
+  standard: (
+    border-width: $form-border-width,
+    border-bottom: $form-border-size solid $form-border-bottom-color,
+    background: $form-background-color,
+    padding-top: 19.5px,
+    padding-left: 0,
+    hover: (
+      border-color: $form-disabled-color
+    ),
+    focus: (
+      border-bottom: $form-border-size solid $form-focus-border-color
+    ),
+    disabled: (
+      border-bottom: $form-border-size solid $form-disabled-color
+    )
+  )
+);
+
+@each $form, $properties in $forms {
+  .tl-form-#{$form} {
+    @each $property, $value in $properties {
+      @if $property == hover or $property == focus or $property == disabled {
+        &#{":#{$property}"} {
+          @each $subproperty, $subvalue in $value {
+            #{$subproperty}: #{$subvalue};
+          }
+        }
+      } @else {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+/* =======================
+     * GRID *
+========================*/
+
+$grid-gab : 20px;
+
+.tl-grid{
+  display: grid;
+  gap: $grid-gab;
+  button{
+    margin: 0;
+  }
+}
+
+/* COLUMS */
+@each $breakpoint, $width in $grid-breakpoints { 
+  @for $i from 1 through $grid-columns {
+    .col-#{$breakpoint}-#{$i} {
+      @if $breakpoint == xs {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      } @else {
+        @media (min-width: $width) {
+          grid-template-columns: repeat(#{$i}, 1fr);
+        }
+      }
+    }
+    .col-#{$i} {
+      @if $breakpoint == xs {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  } 
+}
+
+/* COLUMS EXPAND */
+@each $breakpoint, $width in $grid-breakpoints {
+  @for $i from 1 through $grid-columns {
+    .span-#{$breakpoint}-#{$i} {
+      display: grid;
+      gap: $grid-gab;
+      @if $breakpoint == xs {
+        grid-column: span #{$i};
+      } @else {
+        @media (min-width: $width) {
+          grid-column: span #{$i};
+        }
+      }
+    }
+    .span-#{$i} {
+      display: grid;
+      @if $breakpoint == xs {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+///////////
+/// 
+/// 
+/// 
+/// 
+
+@each $name, $color in $theme-colors {
+  .tl-focus-#{$name} {
+    &:focus{
+    border-color: #{$color}
+    }
+  }
+}
+
+.no-border{
+border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+/* =======================
+     * CONFIG GLOBALS *
+========================*/
+
+// Typography
+//
+// 1. Remove top margins from headings
+//    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+//    margin for easier control within type scales as it avoids margin collapsing.
+
+%heading {
+    margin-top: 0; // 1
+    margin-bottom: $headings-margin-bottom;
+    font-family: $headings-font-family;
+    font-style: $headings-font-style;
+    line-height: $headings-line-height;
+    color: $headings-color;
+  }
+  
+  h1 {
+    @extend %heading;
+    @include font-size($h1-font-size);
+  }
+  
+  h2 {
+    @extend %heading;
+    @include font-size($h2-font-size);
+  }
+  
+  h3 {
+    @extend %heading;
+    @include font-size($h3-font-size);
+  }
+  
+  h4 {
+    @extend %heading;
+    @include font-size($h4-font-size);
+  }
+  
+  h5 {
+    @extend %heading;
+    @include font-size($h5-font-size);
+  }
+  
+  h6 {
+    @extend %heading;
+    @include font-size($h6-font-size);
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  // Links
+  
+  a {
+    color: var(--#{$prefix}link-color);
+    text-decoration: $link-decoration;
+  
+    &:hover {
+      color: var(--#{$prefix}link-hover-color);
+      text-decoration: $link-hover-decoration;
+    }
+  }
+  
+  // Type display classes
+  @each $display, $font-size in $display-font-sizes {
+    .tl-display-#{$display} {
+      @include font-size($font-size);
+      font-family: $display-font-family;
+      font-style: $display-font-style;
+      font-weight: $display-font-weight;
+      line-height: $display-line-height;
+    }
+  }
+  
+  
+  form input {
+    padding: 10px 15px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: #ffffff;
+    width: 100%;
+    margin: 8px 0px;
+    outline: none;
+    font-size: 20px;
+    
+    &:disabled{
+      &::placeholder{
+        color: $form-disabled-color;
+      }
+    }
+  }
+  
+  button {
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: 0.5px solid #5a5a5a;
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+    transition: .3s ease all;
+    cursor: pointer;
+    &:hover{
+      background-color: #d3d3d3;
+    }
+    /* El último botón no debe tener margen a la derecha */
+    &:last-child {
+      margin-right: 0;
+    }
+  }

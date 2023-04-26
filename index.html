@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tlux w/ Vite</title>
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+
+
+    <div class="nav sticky-top bg-primary text-light">
+        <div class="tl-container tl-grid col-2">
+          <div class="nav-header">
+            <div>TLUX FRAMEWORK</div>
+          </div>
+          <div class="nav-content ">
+            <ul class="tl-grid col-3">
+                <li class="nav-link"><span>Inicio</span></li>
+                <li class="nav-link"><span>Nosotros</span></li>
+                <li class="nav-link"><span>Contacto</span></li>
+            </ul>
+
+<!--
+            <div class="nav-link dropdown">
+              <span @click="toggleDropdown" ref="dropdown">Portafolio</span>
+              <ul class="dropdown-menu" :class="{ 'dropdown-collapse': showDropdown }">
+                <li><a href="#">Producto 1</a></li> 
+                <li><a href="#">Producto 2</a></li>
+                <li><a href="#">Producto 3</a></li>
+              </ul>
+            </div>
+-->
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    <div class="tl-container py-4 px-3 mx-auto">
+        <div class="card">
+            <h1>Hello, Tlux and Vite!</h1>
+            <button class="tl-btn-primary rounded mt-1">Primary button</button>
+        </div>
+        <h1 class="tl-display-5 text-uppercase fw-normal pt-4">Tipografy</h1>
+        <div class="tl-grid col-1 col-md-2 pt-4">
+            <div>
+                <h1>H1</h1>
+                <h2>H2</h2>
+                <h3>H3</h3>
+                <h4>H4</h4>
+                <h5>H5</h5>
+                <h6>H6</h6>
+                <p>P</p>
+            </div>
+            <div>
+                <p class="tl-display-1">Display 1</p>
+                <p class="tl-display-2">Display 2</p>
+                <p class="tl-display-3">Display 3</p>
+            </div>
+
+            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Responsive colums</a>
+        </div>
+
+        <div class="py-4">
+            <main class="tl-grid flex-wrap col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+            </main>
+        </div>
+
+        <div class="pb-4">
+            <div class="tl-grid col-md-3">
+                <div class="span-md-2">
+                    <div class="card">
+                        <h1>Lorem ipsum dolor sit amet.</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
+                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
+                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
+                    </div>
+                    <div class="card">
+                        <h1>Lorem ipsum dolor sit amet.</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
+                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
+                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h1
+                        class="fs-3 fw-semibold lh-base font-monospace text-center text-decoration-underline text-uppercase text-nowrap mb-4 text-muted">
+                        Forms</h1>
+                    <form>
+                        <input type="text" class="tl-form-outlined tl-focus-secondary" placeholder="Outline">
+                        <input type="text" class="tl-form-filled tl-focus-accent" placeholder="Filled">
+                        <input type="text" class="tl-form-standard tl-focus-negative" placeholder="Standart">
+                        <div class="tl-grid col-md-1 col-lg-2 mt-4 gap-3 justify-content-center">
+                            <button class="tl-btn-primary rounded">Send</button>
+                            <button class="tl-btn-dark">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

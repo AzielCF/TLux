@@ -1,0 +1,18 @@
+/**  BUTTOMS  **/
+
+@each $name, $color in $theme-colors {
+    .tl-btn-#{$name} {
+      background-color: #{$color};
+      color: color-contrast($color);
+      @debug color-contrast($color);
+      border: none;
+      &:hover{
+        @if $name == 'dark' {
+          background-color: lighten($color, 20%);
+        }@else{
+          background-color: darken($color, 10%);
+        }
+      }
+    }
+  }
+  /**  END BUTTONS  **/
