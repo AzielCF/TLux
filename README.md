@@ -22,6 +22,7 @@ La estructura de archivos de TLux es fácil de entender y seguir. Las carpetas s
 
 
 ## Estado del proyecto
+![Build Status](https://img.shields.io/badge/Status-Dev-red)
 
 Actualmente, Tlux está en proceso de desarrollo. El grid, los formularios y los elementos están en proceso, mientras que las variables globales están en progreso. Los helpers y utilities están en un estado avanzado, pero aún necesitan ser organizados y añadidos al framework. Los componentes aún no han sido desarrollados, lo que significa que el trabajo en Tlux está en curso y que los usuarios pueden esperar nuevas actualizaciones y mejoras en el futuro.
 
@@ -38,6 +39,7 @@ Actualmente, Tlux está en proceso de desarrollo. El grid, los formularios y los
 
 Si deseas contribuir a Tlux, te invitamos a hacerlo a través de pull requests en GitHub. Tu ayuda es muy apreciada y nos ayudará a hacer crecer este proyecto.
 
-## Licencia
+## Licencia [![License](https://img.shields.io/github/license/AzielCF/TLux?logo=github)](https://github.com/AzielCF/TLux/blob/master/LICENSE)
+
 
 Tlux se distribuye bajo la licencia MIT, lo que significa que es de uso libre y gratuito para cualquier proyecto. Para más información, consulta el archivo `LICENSE` incluido en este repositorio.
