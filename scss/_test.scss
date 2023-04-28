@@ -1,6 +1,5 @@
 
 @use "sass:map";
-
 /* =======================
      * COMPONENTS *
 ========================*/
@@ -85,12 +84,9 @@ $forms: (
 
 $grid-gab : 20px;
 
-.tl-grid{
+.tl-grid {
   display: grid;
   gap: $grid-gab;
-  button{
-    margin: 0;
-  }
 }
 
 /* COLUMS */
