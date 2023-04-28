@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tlux Framework</title>
+    <link rel="stylesheet" href="../css/tlux.min.css">
+  </head>
+  <body>
+
+    <div class="nav sticky-top bg-primary text-light">
+        <div class="tl-container tl-grid col-2">
+          <div class="nav-header">
+            <div>TLUX FRAMEWORK</div>
+          </div>
+          <div class="nav-content ">
+            <ul class="tl-grid col-3">
+                <li class="nav-link"><span>Inicio</span></li>
+                <li class="nav-link"><span>Nosotros</span></li>
+                <li class="nav-link"><span>Contacto</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <div class="tl-container py-4 px-3 mx-auto">
+        <div class="card">
+            <h1>Hello, Tlux and Vite!</h1>
+            <button class="btn primary rounded mt-1">Primary button</button>
+        </div>
+        <h1 class="tl-display-5 text-up0percase fw-normal pt-4">Typografy</h1>
+        <div class="tl-grid col-1 col-md-2 pt-4">
+            <div>
+                <h1>H1</h1>
+                <h2>H2</h2>
+                <h3>H3</h3>
+                <h4>H4</h4>
+                <h5>H5</h5>
+                <h6>H6</h6>
+                <p>P</p>
+            </div>
+            <div>
+                <p class="tl-display-1">Display 1</p>
+                <p class="tl-display-2">Display 2</p>
+                <p class="tl-display-3">Display 3</p>
+            </div>
+
+            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Responsive colums</a>
+        </div>
+
+        <div class="py-4">
+            <main class="tl-grid flex-wrap col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+                <div class="card">.col</div>
+            </main>
+        </div>
+
+        <div class="pb-4">
+            <div class="tl-grid col-md-3">
+                <div class="span-md-2">
+                    <div class="card">
+                        <h1>Lorem ipsum dolor sit amet.</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
+                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
+                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
+                    </div>
+                    <div class="card">
+                        <h1>Lorem ipsum dolor sit amet.</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
+                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
+                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
+                    </div>
+                </div>
+                <div class="card d-flex flex-column justify-content-center">
+                        <span
+                        class="fs-3 fw-semibold lh-base font-monospace text-center text-decoration-underline text-uppercase text-nowrap text-muted pb-4">
+                        Forms</span>
+                    <form>
+                        <input type="text" disabled class="tl-form-outlined tl-focus-secondary" placeholder="Outline">
+                        <input type="text" class="tl-form-filled tl-focus-accent" placeholder="Filled">
+                        <input type="text" class="tl-form-standard tl-focus-negative" placeholder="Standart">
+                        <div class="tl-grid col-1 col-md-2 pt-3">
+                            <button class="btn primary rounded m-0">Send</button>
+                            <button class="btn dark">Reset</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="pb-4">
+            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Buttons</a>
+            <p>Los botones son esenciales para toda interaccion y diseño por el cual tenemos un diceño preestablecido para los siguientes tipos.</p>
+            <div class="tl-grid col gap-3 pt-3 pb-4">
+                <div>
+                    <h3>Clásico</h3>
+                    <div class="btn-container">
+                        <a class="btn">Anchor</a>
+                        <button class="btn">Button</button>
+                        <input class="btn" type="submit" value="Submit input"/>
+                        <input class="btn" type="reset" value="Reset input">
+                    </div>
+                </div>
+                <div>
+                    <h3>Colores</h3>
+                    <div>
+                        <div class="btn-container">
+                            <button class="btn primary">Primary</button>
+                            <button class="btn accent">Link</button>
+                        </div>
+                        
+                        <div class="btn-container">
+                            <button class="btn info">Info</button>
+                            <button class="btn positive">Success</button>
+                            <button class="btn warning">Warning</button>
+                            <button class="btn negative">Danger</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Outline</h3>
+                    <div class="btn-container">
+                        <button class="btn outline">Outline</button>
+                        <button class="btn positive outline">Outline</button>
+                        <button class="btn warning outline">Outline</button>
+                        <button class="btn negative outline">Outline</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Unline</h3>
+                    <div class="btn-container">
+                        <button class="btn unline">Unline</button>
+                        <button class="btn positive unline">Unline</button>
+                        <button class="btn warning unline">Unline</button>
+                        <button class="btn negative unline">Unline</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Disabled</h3>
+                    <div class="btn-container">
+                        <button class="btn" disabled>Disabled</button>
+                        <button class="btn primary" disabled>Disabled</button>
+                        <button class="btn secondary outline" disabled>Disabled</button>
+                        <button class="btn accent unline" disabled>Disabled</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Sizes</h3>
+                    <div class="btn-container">
+                        <button class="btn sm">Small</button>
+                        <button class="btn">Normal</button>
+                        <button class="btn md">Medium</button>
+                        <button class="btn lg is-fullwidth">Large</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resonsive extended</h3>
+                    <div class="btn-container col w-25 m0 is-fullwidth">
+                        <button class="btn sm full-w">Small</button>
+                        <button class="btn full-w">Normal</button>
+                        <button class="btn md full-w">Medium</button>
+                        <button class="btn lg full-w">Large</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
