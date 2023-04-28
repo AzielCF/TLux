@@ -1,18 +1,134 @@
-/**  BUTTOMS  **/
 
-@each $name, $color in $theme-colors {
-    .tl-btn-#{$name} {
-      background-color: #{$color};
-      color: color-contrast($color);
-      @debug color-contrast($color);
-      border: none;
-      &:hover{
-        @if $name == 'dark' {
-          background-color: lighten($color, 20%);
-        }@else{
-          background-color: darken($color, 10%);
+.btn-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-bottom: #{$btn-padding-y};
+}
+
+button, a, input {
+  &.btn {
+     // scss-docs-start btn-css-vars
+  --#{$prefix}btn-padding-x: #{$btn-padding-x};
+  --#{$prefix}btn-padding-y: #{$btn-padding-y};
+  --#{$prefix}btn-font-weight: #{$btn-font-weight};
+  --#{$prefix}btn-line-height: #{$btn-line-height};
+  --#{$prefix}btn-color: #{$body-color};
+  --#{$prefix}btn-border-width: #{$btn-border-width};
+  --#{$prefix}btn-border-color: #{$gray-400};
+  --#{$prefix}btn-border-radius: #{$btn-border-radius};
+  --#{$prefix}btn-hover-border-color: #{$dark};
+  --#{$prefix}btn-font-size: #{$font-size-base};
+    // Estilos comunes para botones
+    background-color: $white;
+    padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
+    @include font-size(var(--#{$prefix}btn-font-size));
+    font-weight: var(--#{$prefix}btn-font-weight);
+    display: inline-flex;
+    text-align: center;
+    line-height: var(--#{$prefix}btn-line-height);
+    transition: .3s ease all;
+    justify-content: center;
+    cursor: pointer;
+    border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
+    border-radius: var(--#{$prefix}btn-border-radius);
+    
+    &:hover {
+      color: var(--#{$prefix}btn-hover-color);
+      text-decoration: if($link-hover-decoration == underline, none, null);
+      background-color: var(--#{$prefix}btn-hover-bg);
+      border-color: var(--#{$prefix}btn-hover-border-color);
+    }
+
+    &.full-w{
+      display: flex;
+      width: 100%;
+      margin-bottom: #{$btn-padding-y};
+    }
+
+    &:not(:last-child):not(.full-w) {
+      margin-right: .5rem;
+    }
+
+    // Estilos para botones con colores personalizados
+    @each $name, $color in $theme-colors {
+      &.#{$name} {
+        background-color: #{$color};
+        color: color-contrast($color);
+        border: none;
+
+        &:hover {
+          @if $name == 'dark' {
+            background-color: lighten($color, 20%);
+          } @else {
+            background-color: darken($color, 10%);
+          }
         }
       }
     }
+  
+
+    // Estilos para botones huecos
+    &.outline {
+      background-color: transparent;
+      color: var(--#{$prefix}btn-color);
+      border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
+      border-radius: var(--#{$prefix}btn-border-radius);
+      
+      &:hover {
+        border-color: var(--#{$prefix}btn-hover-color);
+      }
+      
+      // Solo se aplicará si se usa una clase de color
+      @each $name, $color in $theme-colors {
+        &.#{$name} {
+          color: $color;
+          border-color: $color;
+          
+          &:hover {
+            color: color-contrast($color);
+          }
+        }
+      }
+    }
+
+    // Estilos para botones sin borde
+    &.unline {
+      background-color: transparent;
+      border: none;
+      color: var(--#{$prefix}btn-color);
+      
+      &:hover {
+        background-color: rgba($black, 0.1);
+      }
+      
+      // Solo se aplicará si se usa una clase de color
+      @each $name, $color in $theme-colors {
+        &.#{$name} {
+          color: $color;
+        }
+      }
+    }
+
+    //
+    // Button Sizes
+    //
+
+    // scss-docs-end btn-size-mixin
+    &.lg {
+      @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+    }
+
+    &.md {
+      @include button-size($btn-padding-y-md, $btn-padding-x-md, $btn-font-size-md, $btn-border-radius-md);
+    }
+
+    &.sm {
+      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+    }
+
   }
-  /**  END BUTTONS  **/
+
+}
+
