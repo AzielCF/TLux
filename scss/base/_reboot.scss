@@ -95,10 +95,10 @@
   button {
     background-color: #ffffff;
     border-radius: 3px;
-    padding: 10px 15px;
-    margin-right: 10px;
+    padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
     border: 0.5px solid #5a5a5a;
     display: inline-block;
+    align-items: center;
     text-align: center;
     line-height: 22px;
     transition: .3s ease all;
@@ -109,5 +109,17 @@
     /* El último botón no debe tener margen a la derecha */
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  a,
+  select,
+  input[type="submit"],
+  input[type="reset"],
+  button {
+    &:disabled {
+      opacity: 0.25;
+      cursor: not-allowed !important;
+      pointer-events: none;
     }
   }
