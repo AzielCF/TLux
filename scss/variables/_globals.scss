@@ -1,0 +1,4 @@
+
+// Prefix for :root CSS variables
+$variable-prefix:             tl- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix !default;
