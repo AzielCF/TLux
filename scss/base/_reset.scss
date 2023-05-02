@@ -15,7 +15,6 @@
   *::after {
     margin: 0;
     padding: 0;
-    border: 0;
     box-sizing: border-box;
     vertical-align: baseline;
   }
@@ -34,12 +33,14 @@
     object-fit: cover;
     object-position: center center;
   }
+  /*
   a {
     display: block;
     text-decoration: none;
     color: inherit;
     font-size: inherit;
   }
+  */
   p a {
     display: inline;
   }
@@ -78,7 +79,7 @@
     content: none;
   }
   ::selection {
-    background-color: var(--black);
+    background-color: #5a81ff80;
   }
   form,
   input,
@@ -109,7 +110,6 @@
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--type-primary);
-    color: var(--black);
     hyphens: auto;
     font-smooth: always;
     -webkit-font-smoothing: antialiased;

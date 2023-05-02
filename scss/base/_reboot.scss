@@ -47,22 +47,6 @@
     @include font-size($h6-font-size);
   }
   
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-  // Links
-  
-  a {
-    color: var(--#{$prefix}link-color);
-    text-decoration: $link-decoration;
-  
-    &:hover {
-      color: var(--#{$prefix}link-hover-color);
-      text-decoration: $link-hover-decoration;
-    }
-  }
-  
   // Type display classes
   @each $display, $font-size in $display-font-sizes {
     .tl-display-#{$display} {
@@ -89,26 +73,6 @@
       &::placeholder{
         color: $form-disabled-color;
       }
-    }
-  }
-  
-  button {
-    background-color: #ffffff;
-    border-radius: 3px;
-    padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
-    border: 0.5px solid #5a5a5a;
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    line-height: 22px;
-    transition: .3s ease all;
-    cursor: pointer;
-    &:hover{
-      background-color: #d3d3d3;
-    }
-    /* El último botón no debe tener margen a la derecha */
-    &:last-child {
-      margin-right: 0;
     }
   }
 
