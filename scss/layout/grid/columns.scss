@@ -1,0 +1,77 @@
+/* =======================
+     * GRID *
+========================*/
+
+$grid-gab : 20px;
+$container-md: map-get($container-max-widths, md);
+
+.tl-grid:not(.mobile) {
+  display: block;
+  @media screen and (max-width: $container-md) {
+    > * {
+      margin-bottom: $grid-gab;
+    }
+
+    @each $space, $value in $spacers { 
+        &.block-gap-#{$space} {
+          > * {
+            margin-bottom: #{$value}; 
+          }
+      }
+    }
+
+  }
+  @media screen and (min-width: $container-md) {
+    display: grid;
+    gap: $grid-gab;
+  }
+}
+
+.tl-grid.mobile {
+  display: grid;
+  gap: $grid-gab;
+}
+
+/* COLUMS */
+@each $breakpoint, $width in $grid-breakpoints { 
+  @for $i from 1 through $grid-columns {
+    .#{$prefix-colunm + $breakpoint}-#{$i} {
+      @if $breakpoint == xs {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      } @else {
+        @media (min-width: $width) {
+          grid-template-columns: repeat(#{$i}, 1fr);
+        }
+      }
+    }
+    .#{$prefix-colunm + $i} {
+      @if $breakpoint == xs {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  } 
+}
+
+/* COLUMS EXPAND */
+@each $breakpoint, $width in $grid-breakpoints {
+  @for $i from 1 through $grid-columns {
+    .span-#{$breakpoint}-#{$i} {
+      display: grid;
+      gap: $grid-gab;
+      @if $breakpoint == xs {
+        grid-column: span #{$i};
+      } @else {
+        @media (min-width: $width) {
+          grid-column: span #{$i};
+        }
+      }
+    }
+    .span-#{$i} {
+      display: grid;
+      @if $breakpoint == xs {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
