@@ -1,0 +1,68 @@
+/**  FORM  **/
+
+$forms: (
+  outlined: (
+    border: $form-border-size solid $form-border-color,
+    background: $form-background-color,
+    padding: $form-padding-top $form-padding-left,
+    hover: (
+      border-color: $form-hover-border-color
+    ),
+    focus: (
+      border: $form-border-size solid $form-focus-border-color,
+      ),
+    disabled: (
+      border: $form-border-size solid $form-disabled-color
+    )
+  ),
+  filled: (
+    border-width: $form-border-width,
+    border-bottom: $form-border-size solid $form-border-bottom-color,
+    background-color: $form-filled-background-color,
+    padding: $form-padding-top $form-padding-left,
+    hover: (
+      border-color: $form-hover-border-color,
+      background-color: $form-hover-background-color
+    ),
+    focus: (
+      border-bottom: $form-border-size solid $form-focus-border-color
+    ),
+    disabled: (
+      border-bottom: $form-border-size solid $form-disabled-color,
+      background-color: $form-hover-background-color
+    )
+  ),
+  standard: (
+    border-width: $form-border-width,
+    border-bottom: $form-border-size solid $form-border-bottom-color,
+    background: $form-background-color,
+    padding-top: 19.5px,
+    padding-left: 0,
+    hover: (
+      border-color: $form-disabled-color
+    ),
+    focus: (
+      border-bottom: $form-border-size solid $form-focus-border-color
+    ),
+    disabled: (
+      border-bottom: $form-border-size solid $form-disabled-color
+    )
+  )
+);
+
+@each $form, $properties in $forms {
+  .#{$prefix}form-#{$form} {
+    border: 0;
+    @each $property, $value in $properties {
+      @if $property == hover or $property == focus or $property == disabled {
+        &#{":#{$property}"} {
+          @each $subproperty, $subvalue in $value {
+            #{$subproperty}: #{$subvalue};
+          }
+        }
+      } @else {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
