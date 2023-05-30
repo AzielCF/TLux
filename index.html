@@ -4,20 +4,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tlux w/ Vite</title>
+    
     <script type="module" src="./main.js"></script>
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css">
+
+
+    <style>
+        .copy-to-clipboard-button{
+            background-color: #ebc137 !important;
+            padding: 8px 20px !important;
+            margin: 30px 10px !important;
+            color: #000 !important;
+        }
+        pre{
+            border-radius: 0px 6px 6px 6px !important;
+            margin: 0 !important;
+            overflow: auto;
+            white-space: pre;
+            display: flex;
+        }
+        .pre-label{
+            border-radius: 6px 6px 0px 0px !important;
+            width: 70px;
+            text-align: center;
+            height: 25px;
+            padding-top: 5px;
+            font-size: 12px;
+        }
+        .token.constant, .token.deleted, .token.property, .token.symbol, .token.tag, .token.attr-name, .token.deleted, .token.namespace, .token.tag {
+            color: #7197ff;
+        }
+        .token.attr-value, .token.char, .token.regex, .token.string, .token.variable {
+            color: #d1599b;
+        }
+    </style>
+</head>
   <body>
 
     <div class="nav sticky-top bg-primary text-light">
-        <div class="tl-container tl-grid col-2">
+        <div class="tl-container tl-grid col-2 mobile">
           <div class="nav-header">
             <div>TLUX FRAMEWORK</div>
           </div>
-          <div class="nav-content ">
-            <ul class="tl-grid col-3">
-                <li class="nav-link"><span>Inicio</span></li>
-                <li class="nav-link"><span>Nosotros</span></li>
-                <li class="nav-link"><span>Contacto</span></li>
+          <div class="nav-content">
+            <ul class="tl-grid col-3 mobile">
+                <li class="nav-link"><span>Select</span></li>
+                <li class="nav-link"><span>Select</span></li>
+                <li class="nav-link"><span>Select</span></li>
             </ul>
 
 <!--
@@ -33,13 +67,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
 
     <div class="tl-container py-4 px-3 mx-auto">
         <div class="card">
@@ -67,13 +94,23 @@
         </div>
 
         <div class="py-4">
-            <main class="tl-grid flex-wrap col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+            <h3>Desktop</h3>
+            <main class="tl-grid block-gap-3 flex-wrap col-1 col-sm-2 col-md-3 col-lg-6 text-center">
                 <div class="card">.col</div>
                 <div class="card">.col</div>
                 <div class="card">.col</div>
                 <div class="card">.col</div>
                 <div class="card">.col</div>
                 <div class="card">.col</div>
+            </main>
+            <h3>Mobile</h3>
+            <main class="tl-grid mobile flex-wrap col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
+                <div class="card">.col 1</div>
+                <div class="card">.col 2</div>
+                <div class="card">.col 3</div>
+                <div class="card">.col 4</div>
+                <div class="card">.col 5</div>
+                <div class="card">.col 6</div>
             </main>
         </div>
 
@@ -112,8 +149,8 @@
         </div>
         <div class="pb-4">
             <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Buttons</a>
-            <p>Los botones son esenciales para toda interaccion y diseño por el cual tenemos un diceño preestablecido para los siguientes tipos.</p>
-            <div class="tl-grid col gap-3 pt-3 pb-4">
+            <p>Buttons are essential elements in a website's user interface, allowing users to perform actions with ease. TLux offers a wide selection of customizable button styles to meet the design and functionality needs of your project.</p>
+            <div class="tl-grid gap-3 pt-3 pb-4">
                 <div>
                     <h3>Clásico</h3>
                     <div class="btn-container">
@@ -157,35 +194,129 @@
                         <button class="btn negative unline">Unline</button>
                     </div>
                 </div>
-                <div>
-                    <h3>Disabled</h3>
+                <h3>Disabled</h3>
+                <div class="tl-grid col">
                     <div class="btn-container">
                         <button class="btn" disabled>Disabled</button>
                         <button class="btn primary" disabled>Disabled</button>
                         <button class="btn secondary outline" disabled>Disabled</button>
                         <button class="btn accent unline" disabled>Disabled</button>
                     </div>
+                    <div>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plane">
+                                    <button class="btn" disabled>Disabled</button>
+                                    <button class="btn primary" disabled>Disabled</button>
+                                    <button class="btn secondary outline" disabled>Disabled</button>
+                                    <button class="btn accent unline" disabled>Disabled</button>
+                                </script>
+                            </code>
+                        </pre>
+                    </div>
                 </div>
-                <div>
-                    <h3>Sizes</h3>
+                <h3>Sizes</h3>
+                <div class="tl-grid col">
                     <div class="btn-container">
                         <button class="btn sm">Small</button>
                         <button class="btn">Normal</button>
                         <button class="btn md">Medium</button>
-                        <button class="btn lg is-fullwidth">Large</button>
+                        <button class="btn lg">Large</button>
+                    </div>
+                    <div>
+                        <pre class="w-100">
+                            <code class="language-html" >
+                                <script type="text/plane">
+                                    <button class="btn sm">Small</button>
+                                    <button class="btn">Normal</button>
+                                    <button class="btn md">Medium</button>
+                                    <button class="btn lg">Large</button>
+                                </script>
+                            </code>
+                        </pre>
                     </div>
                 </div>
-                <div>
-                    <h3>Resonsive extended</h3>
-                    <div class="btn-container col w-25 m0 is-fullwidth">
-                        <button class="btn sm full-w">Small</button>
-                        <button class="btn full-w">Normal</button>
-                        <button class="btn md full-w">Medium</button>
-                        <button class="btn lg full-w">Large</button>
+                <h3>Resonsive extended</h3>
+                <div class="tl-grid col col-md-2">
+                    <div>
+                        <div class="btn-container col w-100 m0 is-fullwidth">
+                            <button class="btn sm full-w">Small</button>
+                            <button class="btn full-w">Normal</button>
+                            <button class="btn md full-w">Medium</button>
+                            <button class="btn lg full-w">Large</button>
+                        </div>
+                    </div>
+                    <div>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plane">
+                                    <button class="btn sm full-w">Small</button>
+                                    <button class="btn full-w">Normal</button>
+                                    <button class="btn md full-w">Medium</button>
+                                    <button class="btn lg full-w">Large</button>
+                                </script>
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<script>
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+	/*'break-lines': 80,
+	'indent': 2,
+	'remove-initial-line-feed': false,
+	'tabs-to-spaces': 4,
+	'spaces-to-tabs': 4*/
+});
+
+
+(function () {
+  if (typeof Prism === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  /**
+   * Agrega un botón personalizado como hermano del elemento de la barra de herramientas.
+   *
+   * @param {HTMLElement} element El elemento del bloque de código.
+   * @param {Function} onClick El evento que se llamará cuando se haga clic en el botón.
+   */
+  function addCodeButton(element, onClick) {
+    // Obtener el nombre del lenguaje de programación a partir de la clase 'language-*'
+    var languageName = element.classList.value.replace('language-', '');
+
+    var button = document.createElement('div');
+    button.textContent = languageName;
+    button.classList.add('pre-label');
+    button.style.backgroundColor = getComputedStyle(element.parentNode).backgroundColor; // Obtener el color de fondo del elemento <pre>
+    button.style.color = getComputedStyle(element.parentNode).color;
+    button.addEventListener('click', function () {
+      onClick(element);
+    });
+    // Agregar el botón como hermano del elemento de la barra de herramientas
+    element.parentNode.insertAdjacentElement('beforebegin', button);
+  }
+
+  // Ejemplo de uso
+  Prism.hooks.add('complete', function (env) {
+    addCodeButton(env.element, function (element) {
+      eval(element.textContent);
+    });
+  });
+})();
+    </script>
   </body>
 </html>
