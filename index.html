@@ -74,6 +74,7 @@
             <button class="btn primary rounded mt-1">Primary button</button>
         </div>
         <h1 class="tl-display-5 text-up0percase fw-normal pt-4">Typografy</h1>
+        <h6>Typography includes various sizes of headers (h1-h6) and displays. The displays are big and bold, designed to stand out on the web page.</h6>
         <div class="tl-grid col-1 col-md-2 pt-4">
             <div>
                 <h1>H1</h1>
@@ -89,29 +90,78 @@
                 <p class="tl-display-2">Display 2</p>
                 <p class="tl-display-3">Display 3</p>
             </div>
-
-            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Responsive colums</a>
         </div>
 
+
         <div class="py-4">
-            <h3>Desktop</h3>
-            <main class="tl-grid block-gap-3 flex-wrap col-1 col-sm-2 col-md-3 col-lg-6 text-center">
-                <div class="card">.col</div>
-                <div class="card">.col</div>
-                <div class="card">.col</div>
-                <div class="card">.col</div>
-                <div class="card">.col</div>
-                <div class="card">.col</div>
-            </main>
-            <h3>Mobile</h3>
-            <main class="tl-grid mobile flex-wrap col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
-                <div class="card">.col 1</div>
-                <div class="card">.col 2</div>
-                <div class="card">.col 3</div>
-                <div class="card">.col 4</div>
-                <div class="card">.col 5</div>
-                <div class="card">.col 6</div>
-            </main>
+            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Responsive colums</a>
+            <h6>Tlux's interesting feature is its grid system focused on CSS grid without adding extra classes to individual cells. Grids behave differently on desktop and mobile platforms. Example implementation is provided.</h6>
+            
+            <h3 class="pt-4">Desktop</h3>
+            <h6>To implement the desktop grid in Tlux, you must use the class "tl-grid" followed by "col-" to define the columns. If nothing additional is added, the grid will be desktop by default.</h6>
+            <h6>To create a gap, use "gap-{size}" class, but for smallest screens the grid changes to "block" & gap class won't work. Use "block-gap-{size}" instead, created to specifically cover this case.</h6>
+            <div class="tl-grid col pt-3">
+                <div>
+                    <div class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                    </div>
+                </div>
+                <div>
+                    <pre>
+                        <code class="language-html">
+                            <script type="text/plane">
+                                <div class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                </div>
+                            </script>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+
+
+            <h3 class="pt-4">Mobile</h3>
+            <h6>If you are looking for a fully responsive website for the mobile version, use the "mobile" class after "tl-grid" to ensure that the grid is always grid. Also, the "gap-{size}" class is the only class needed to modify the gaps in the grid.</h6>
+            <div class="tl-grid col pt-3">
+                <div>
+                    <div class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                        <div class="card">.col</div>
+                    </div>
+                </div>
+                <div>
+                    <pre>
+                        <code class="language-html">
+                            <script type="text/plane">
+                                <div class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                    <div>.col</div>
+                                </div>
+                            </script>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
         </div>
 
         <div class="pb-4">
@@ -152,7 +202,7 @@
             <p>Buttons are essential elements in a website's user interface, allowing users to perform actions with ease. TLux offers a wide selection of customizable button styles to meet the design and functionality needs of your project.</p>
             <div class="tl-grid gap-3 pt-3 pb-4">
                 <div>
-                    <h3>Clásico</h3>
+                    <h3>Clasic</h3>
                     <div class="btn-container">
                         <a class="btn">Anchor</a>
                         <button class="btn">Button</button>
@@ -161,7 +211,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3>Colores</h3>
+                    <h3>Colors</h3>
                     <div>
                         <div class="btn-container">
                             <button class="btn primary">Primary</button>
