@@ -1,0 +1,22 @@
+$section-padding-small: 3rem 1.5rem;
+$section-padding-medium: 9rem 4.5rem;
+$section-padding-large: 18rem 6rem;
+$section-padding-default: $section-padding-small;
+
+.section {
+    padding: $section-padding-default;
+
+    @media screen and (min-width: 1024px){
+        & {
+            padding: 3rem 3rem;
+        }
+
+        &.md {
+            padding: $section-padding-medium;
+        }
+
+        &.lg {
+            padding: $section-padding-large;
+        }
+    }
+}
