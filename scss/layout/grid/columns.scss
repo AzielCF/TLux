@@ -3,11 +3,11 @@
 ========================*/
 
 $grid-gab : 20px;
-$container-md: map-get($container-max-widths, md);
+$container-lg: map-get($container-max-widths, lg);
 
 .tl-grid:not(.mobile) {
   display: block;
-  @media screen and (max-width: $container-md) {
+  @media screen and (max-width: $container-lg) {
     > * {
       margin-bottom: $grid-gab;
     }
@@ -19,9 +19,8 @@ $container-md: map-get($container-max-widths, md);
           }
       }
     }
-
   }
-  @media screen and (min-width: $container-md) {
+  @media screen and (min-width: $container-lg) {
     display: grid;
     gap: $grid-gab;
   }
