@@ -1,0 +1,181 @@
+
+$width-menu: 412px;
+
+.nav {
+  min-height: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1024;
+
+
+  &-main{
+    min-height: 3rem;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .menu {
+    grid-column: 2 / -1;
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .toggle {
+    display: none;
+
+    &-icon {
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+      }
+    }
+
+    &.active {
+      .toggle-icon {
+        background-color: transparent;
+
+        &::before {
+          transform: rotateZ(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotateZ(-45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .menu {
+      ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    
+        li {
+          margin: 0;
+          padding: 2rem 1.5em;
+        }
+      }
+    
+      & {
+        z-index: 1040;
+        position: fixed;
+        top: 3rem;   
+        bottom: 0;
+        max-width: 100%;
+        height: calc(100% - 3rem);
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        visibility: hidden;
+        overflow-y: auto;
+        transition: transform .3s ease-in-out;
+      }
+    
+      &.show {
+        width: 100%;
+        
+        visibility: visible;
+        &:not(.hiding), &.showing {
+          transform: none;
+        }
+        &:not(.toggle-end) {
+          left: 0;
+        }
+      }
+      /* Se definen las clases del offcanvas */
+      &.toggle-start {
+        width: $width-menu;
+        left: 0;
+        transform: translateX(-100%);
+      }
+    
+      &.toggle-end {
+        width: $width-menu;
+        right: 0;
+        transform: translateX(100%);
+        @media screen and (min-width: 768px) {
+        margin-right: 15px;
+        }
+      }
+    }
+
+
+
+    .toggle {
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+
+  &.opacity {
+    background-color: rgba(var(--tl-black-rgb), $modal-backdrop-opacity);
+  }
+
+  &.blur{
+    background-color: rgba(var(--tl-black-rgb), $modal-backdrop-opacity);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    pointer-events: inherit;
+  }
+  
+}
+  .fade {
+    opacity: 0;
+  }
