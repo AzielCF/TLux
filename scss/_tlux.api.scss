@@ -1,0 +1,7 @@
+
+@mixin import-files($folder, $files) {
+    @each $file in $files {
+      @import "variables/#{$file}" screen;
+      @import "#{$folder}#{$file}" screen;
+    }
+} 
