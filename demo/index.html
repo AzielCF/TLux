@@ -1,509 +1,600 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tlux Framework</title>
-    
-    <link rel="stylesheet" href="css/tlux.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
+    <link rel="stylesheet" href="css/tlux.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
+    />
 
     <style>
-        .copy-to-clipboard-button{
-            background-color: #ebc137 !important;
-            padding: 8px 20px !important;
-            margin: 30px 10px !important;
-            color: #000 !important;
-        }
-        pre{
-            border-radius: 0px 6px 6px 6px !important;
-            margin: 0 !important;
-            overflow: auto;
-            white-space: pre;
-            display: flex;
-        }
-        .pre-label{
-            border-radius: 6px 6px 0px 0px !important;
-            width: 70px;
-            text-align: center;
-            height: 25px;
-            padding-top: 5px;
-            font-size: 12px;
-        }
-        .token.constant, .token.deleted, .token.property, .token.symbol, .token.tag, .token.attr-name, .token.deleted, .token.namespace, .token.tag {
-            color: #7197ff;
-        }
-        .token.attr-value, .token.char, .token.regex, .token.string, .token.variable {
-            color: #d1599b;
-        }
+      .copy-to-clipboard-button {
+        background-color: #ebc137 !important;
+        padding: 8px 20px !important;
+        margin: 30px 10px !important;
+        color: #000 !important;
+      }
+
+      pre {
+        border-radius: 0px 6px 6px 6px !important;
+        margin: 0 !important;
+        overflow: auto;
+        white-space: pre;
+        display: flex;
+      }
+
+      .pre-label {
+        border-radius: 6px 6px 0px 0px !important;
+        width: 70px;
+        text-align: center;
+        height: 25px;
+        padding-top: 5px;
+        font-size: 12px;
+      }
+
+      .token.constant,
+      .token.deleted,
+      .token.property,
+      .token.symbol,
+      .token.tag,
+      .token.attr-name,
+      .token.deleted,
+      .token.namespace,
+      .token.tag {
+        color: #7197ff;
+      }
+
+      .token.attr-value,
+      .token.char,
+      .token.regex,
+      .token.string,
+      .token.variable {
+        color: #d1599b;
+      }
     </style>
-</head>
+
+    <script type="module">
+      import Navbar from "./js/tlux.navBar-min.js";
+      const navbar = new Navbar();
+    </script>
+  </head>
   <body>
+    <header
+      class="nav text-light"
+      data-toggle="end"
+      bg-color="primary"
+      backdrop="opacity"
+    >
+      <div class="brand">
+        <div>TLUX FRAMEWORK</div>
+      </div>
+      <button class="toggle">
+        <span class="toggle-icon"></span>
+      </button>
+      <div class="menu">
+        <ul>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+          <li><span>Select</span></li>
+        </ul>
+      </div>
+    </header>
 
-    <div class="navbar sticky-top bg-primary text-light">
-        <div class="tl-container tl-grid col-2 mobile">
-          <div class="nav-header">
-            <div>TLUX FRAMEWORK</div>
-          </div>
-          <div class="nav-content">
-            <ul class="tl-grid col-3 mobile">
-                <li class="nav-link"><span>Select</span></li>
-                <li class="nav-link"><span>Select</span></li>
-                <li class="nav-link"><span>Select</span></li>
-            </ul>
+    <div class="tl-container py-4 px-3 mx-auto">
+      <div class="card">
+        <h1>Hello, Tlux Framework!</h1>
+        <button class="btn primary rounded mt-1">Primary button</button>
+      </div>
+      <h1 class="tl-display-5 text-up0percase fw-normal pt-4">Typografy</h1>
+      <h6>
+        Typography includes various sizes of headers (h1-h6) and displays. The
+        displays are big and bold, designed to stand out on the web page.
+      </h6>
+      <div class="tl-grid col-1 col-md-2 pt-4">
+        <div>
+          <h1>H1</h1>
+          <h2>H2</h2>
+          <h3>H3</h3>
+          <h4>H4</h4>
+          <h5>H5</h5>
+          <h6>H6</h6>
+          <p>P</p>
+        </div>
+        <div>
+          <p class="tl-display-1">Display 1</p>
+          <p class="tl-display-2">Display 2</p>
+          <p class="tl-display-3">Display 3</p>
+        </div>
+      </div>
 
-<!--
-            <div class="nav-link dropdown">
-              <span @click="toggleDropdown" ref="dropdown">Portafolio</span>
-              <ul class="dropdown-menu" :class="{ 'dropdown-collapse': showDropdown }">
-                <li><a href="#">Producto 1</a></li> 
-                <li><a href="#">Producto 2</a></li>
-                <li><a href="#">Producto 3</a></li>
-              </ul>
+      <div class="py-4">
+        <a href="#" class="tl-display-5 text-uppercase text-decoration-none"
+          >Layout</a
+        >
+        <h6>
+          Tlux's interesting feature is its grid system focused on CSS grid
+          without adding extra classes to individual cells. Grids behave
+          differently on desktop and mobile platforms. Example implementation is
+          provided.
+        </h6>
+
+        <h3 class="pt-4">Desktop</h3>
+        <h6>
+          To implement the desktop grid in Tlux, you must use the class
+          "tl-grid" followed by "col-" to define the columns. If nothing
+          additional is added, the grid will be desktop by default.
+        </h6>
+        <h6>
+          To create a gap, use "gap-{size}" class, but for smallest screens the
+          grid changes to "block" & gap class won't work. Use "block-gap-{size}"
+          instead, created to specifically cover this case.
+        </h6>
+        <div class="tl-grid col pt-3">
+          <div>
+            <div
+              class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center"
+            >
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
             </div>
--->
+          </div>
+          <div>
+            <pre>
+                            <code class="language-html">
+                                <script type="text/plane">
+                                    <div class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center">
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                    </div>
+                                </script>
+                            </code>
+                        </pre>
+          </div>
+        </div>
+
+        <h3 class="pt-4">Mobile</h3>
+        <h6>
+          If you are looking for a fully responsive website for the mobile
+          version, use the "mobile" class after "tl-grid" to ensure that the
+          grid is always grid. Also, the "gap-{size}" class is the only class
+          needed to modify the gaps in the grid.
+        </h6>
+        <div class="tl-grid col pt-3">
+          <div>
+            <div
+              class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center"
+            >
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+              <div class="card">.col</div>
+            </div>
+          </div>
+          <div>
+            <pre>
+                            <code class="language-html">
+                                <script type="text/plane">
+                                    <div class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                        <div>.col</div>
+                                    </div>
+                                </script>
+                            </code>
+                        </pre>
+          </div>
+        </div>
+        <h2 class="pt-4">Section</h2>
+        <h6>
+          Sections in HTML are grouping elements that help organize the content
+          of a web page. They can be used to divide content into blocks with
+          uniform style for better readability and maintenance.
+        </h6>
+        <div class="tl-grid col pt-3">
+          <div>
+            <div class="tl-grid col pt-3">
+              <div>
+                <section class="section">
+                  <h1>Section Small</h1>
+                  <p class="h6">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Ipsa illum omnis ex consequuntur enim dolor quos, harum
+                    blanditiis sed soluta temporibus eos iure et quibusdam,
+                    voluptate dicta rerum? Cupiditate, esse?
+                  </p>
+                </section>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <section class="section">
+                                                <h1>Section Small</h1>
+                                                <p class="h6">Lorem ipsum dolor</p>
+                                            </section>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+            <div class="tl-grid col pt-3">
+              <div>
+                <section class="section md">
+                  <h1>Section Medium</h1>
+                  <p class="h6">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Ipsa illum omnis ex consequuntur enim dolor quos, harum
+                    blanditiis sed soluta temporibus eos iure et quibusdam,
+                    voluptate dicta rerum? Cupiditate, esse?
+                  </p>
+                </section>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <section class="section md">
+                                                <h1>Section Medium</h1>
+                                                <p class="h6">Lorem ipsum dolor</p>
+                                            </section>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+            <div class="tl-grid col pt-3">
+              <div>
+                <section class="section lg">
+                  <h1>Section Large</h1>
+                  <p class="h6">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Ipsa illum omnis ex consequuntur enim dolor quos, harum
+                    blanditiis sed soluta temporibus eos iure et quibusdam,
+                    voluptate dicta rerum? Cupiditate, esse?
+                  </p>
+                </section>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <section class="section lg">
+                                                <h1>Section Large</h1>
+                                                <p class="h6">Lorem ipsum dolor</p>
+                                            </section>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-    <div class="tl-container py-4 px-3 mx-auto">
-        <div class="card">
-            <h1>Hello, Tlux Framework!</h1>
-            <button class="btn primary rounded mt-1">Primary button</button>
+      <div class="pb-4">
+        <div class="tl-grid col-md-3">
+          <div class="span-md-2">
+            <div class="card">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Perferendis, aperiam iure. Molestias perferendis quibusdam
+                consequuntur magni, odit eveniet commodi molestiae sunt
+                laboriosam deleniti ea unde? Nobis labore accusamus adipisci
+                natus!
+              </p>
+            </div>
+            <div class="card">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Perferendis, aperiam iure. Molestias perferendis quibusdam
+                consequuntur magni, odit eveniet commodi molestiae sunt
+                laboriosam deleniti ea unde? Nobis labore accusamus adipisci
+                natus!
+              </p>
+            </div>
+          </div>
+          <div class="card d-flex flex-column justify-content-center">
+            <span
+              class="fs-3 fw-semibold lh-base font-monospace text-center text-decoration-underline text-uppercase text-nowrap text-muted pb-4"
+            >
+              Forms</span
+            >
+            <form>
+              <input
+                type="text"
+                disabled
+                class="tl-form-outlined tl-focus-secondary"
+                placeholder="Outline"
+              />
+              <input
+                type="text"
+                class="tl-form-filled tl-focus-accent"
+                placeholder="Filled"
+              />
+              <input
+                type="text"
+                class="tl-form-standard tl-focus-negative"
+                placeholder="Standart"
+              />
+              <div class="tl-grid col-1 col-md-2 pt-3">
+                <button class="btn primary rounded m-0">Send</button>
+                <button class="btn dark">Reset</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <h1 class="tl-display-5 text-up0percase fw-normal pt-4">Typografy</h1>
-        <h6>Typography includes various sizes of headers (h1-h6) and displays. The displays are big and bold, designed to stand out on the web page.</h6>
-        <div class="tl-grid col-1 col-md-2 pt-4">
+      </div>
+      <div class="pb-4">
+        <a href="#" class="tl-display-5 text-uppercase text-decoration-none"
+          >Buttons</a
+        >
+        <p>
+          Buttons are essential elements in a website's user interface, allowing
+          users to perform actions with ease. TLux offers a wide selection of
+          customizable button styles to meet the design and functionality needs
+          of your project.
+        </p>
+        <div class="tl-grid gap-3 pt-3 pb-4">
+          <div>
+            <h3>Clasic</h3>
+            <div class="tl-grid col">
+              <div class="btn-container">
+                <a class="btn">Anchor</a>
+                <button class="btn">Button</button>
+                <input class="btn" type="submit" value="Submit input" />
+                <input class="btn" type="reset" value="Reset input" />
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <a class="btn">Anchor</a>
+                                            <button class="btn">Button</button>
+                                            <input class="btn" type="submit" value="Submit input"/>
+                                            <input class="btn" type="reset" value="Reset input">
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Colors</h3>
+            <div class="tl-grid col">
+              <div>
+                <div class="btn-container">
+                  <button class="btn primary">Primary</button>
+                  <button class="btn accent">Link</button>
+                </div>
+
+                <div class="btn-container">
+                  <button class="btn info">Info</button>
+                  <button class="btn positive">Success</button>
+                  <button class="btn warning">Warning</button>
+                  <button class="btn negative">Danger</button>
+                </div>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <div class="btn-container">
+                                                <button class="btn primary">Primary</button>
+                                                <button class="btn accent">Link</button>
+                                            </div>
+                                            
+                                            <div class="btn-container">
+                                                <button class="btn info">Info</button>
+                                                <button class="btn positive">Success</button>
+                                                <button class="btn warning">Warning</button>
+                                                <button class="btn negative">Danger</button>
+                                            </div>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Outline</h3>
+            <div class="tl-grid col">
+              <div>
+                <div class="btn-container">
+                  <button class="btn outline">Outline</button>
+                  <button class="btn positive outline">Outline</button>
+                  <button class="btn warning outline">Outline</button>
+                  <button class="btn negative outline">Outline</button>
+                </div>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                            <button class="btn outline">Outline</button>
+                                            <button class="btn positive outline">Outline</button>
+                                            <button class="btn warning outline">Outline</button>
+                                            <button class="btn negative outline">Outline</button>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Unline</h3>
+            <div class="tl-grid col">
+              <div>
+                <div class="btn-container">
+                  <button class="btn unline">Unline</button>
+                  <button class="btn positive unline">Unline</button>
+                  <button class="btn warning unline">Unline</button>
+                  <button class="btn negative unline">Unline</button>
+                </div>
+              </div>
+              <div>
+                <pre>
+                                    <code class="language-html">
+                                        <script type="text/plane">
+                                                <button class="btn unline">Unline</button>
+                                                <button class="btn positive unline">Unline</button>
+                                                <button class="btn warning unline">Unline</button>
+                                                <button class="btn negative unline">Unline</button>
+                                        </script>
+                                    </code>
+                                </pre>
+              </div>
+            </div>
+          </div>
+          <h3>Disabled</h3>
+          <div class="tl-grid col">
+            <div class="btn-container">
+              <button class="btn" disabled>Disabled</button>
+              <button class="btn primary" disabled>Disabled</button>
+              <button class="btn secondary outline" disabled>Disabled</button>
+              <button class="btn accent unline" disabled>Disabled</button>
+            </div>
             <div>
-                <h1>H1</h1>
-                <h2>H2</h2>
-                <h3>H3</h3>
-                <h4>H4</h4>
-                <h5>H5</h5>
-                <h6>H6</h6>
-                <p>P</p>
+              <pre>
+                                <code class="language-html">
+                                    <script type="text/plane">
+                                        <button class="btn" disabled>Disabled</button>
+                                        <button class="btn primary" disabled>Disabled</button>
+                                        <button class="btn secondary outline" disabled>Disabled</button>
+                                        <button class="btn accent unline" disabled>Disabled</button>
+                                    </script>
+                                </code>
+                            </pre>
+            </div>
+          </div>
+          <h3>Sizes</h3>
+          <div class="tl-grid col">
+            <div class="btn-container">
+              <button class="btn sm">Small</button>
+              <button class="btn">Normal</button>
+              <button class="btn md">Medium</button>
+              <button class="btn lg">Large</button>
             </div>
             <div>
-                <p class="tl-display-1">Display 1</p>
-                <p class="tl-display-2">Display 2</p>
-                <p class="tl-display-3">Display 3</p>
+              <pre class="w-100">
+                                <code class="language-html" >
+                                    <script type="text/plane">
+                                        <button class="btn sm">Small</button>
+                                        <button class="btn">Normal</button>
+                                        <button class="btn md">Medium</button>
+                                        <button class="btn lg">Large</button>
+                                    </script>
+                                </code>
+                            </pre>
             </div>
+          </div>
+          <h3>Resonsive extended</h3>
+          <div class="tl-grid col col-md-2">
+            <div>
+              <div class="btn-container col w-100 m0 is-fullwidth">
+                <button class="btn sm full-w">Small</button>
+                <button class="btn full-w">Normal</button>
+                <button class="btn md full-w">Medium</button>
+                <button class="btn lg full-w">Large</button>
+              </div>
+            </div>
+            <div>
+              <pre>
+                                <code class="language-html">
+                                    <script type="text/plane">
+                                        <button class="btn sm full-w">Small</button>
+                                        <button class="btn full-w">Normal</button>
+                                        <button class="btn md full-w">Medium</button>
+                                        <button class="btn lg full-w">Large</button>
+                                    </script>
+                                </code>
+                            </pre>
+            </div>
+          </div>
         </div>
-
-
-        <div class="py-4">
-            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Layout</a>
-            <h6>Tlux's interesting feature is its grid system focused on CSS grid without adding extra classes to individual cells. Grids behave differently on desktop and mobile platforms. Example implementation is provided.</h6>
-            
-            <h3 class="pt-4">Desktop</h3>
-            <h6>To implement the desktop grid in Tlux, you must use the class "tl-grid" followed by "col-" to define the columns. If nothing additional is added, the grid will be desktop by default.</h6>
-            <h6>To create a gap, use "gap-{size}" class, but for smallest screens the grid changes to "block" & gap class won't work. Use "block-gap-{size}" instead, created to specifically cover this case.</h6>
-            <div class="tl-grid col pt-3">
-                <div>
-                    <div class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center">
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                    </div>
-                </div>
-                <div>
-                    <pre>
-                        <code class="language-html">
-                            <script type="text/plane">
-                                <div class="tl-grid block-gap-3 col-1 col-sm-2 col-md-3 col-lg-6 text-center">
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                </div>
-                            </script>
-                        </code>
-                    </pre>
-                </div>
-            </div>
-
-
-
-            <h3 class="pt-4">Mobile</h3>
-            <h6>If you are looking for a fully responsive website for the mobile version, use the "mobile" class after "tl-grid" to ensure that the grid is always grid. Also, the "gap-{size}" class is the only class needed to modify the gaps in the grid.</h6>
-            <div class="tl-grid col pt-3">
-                <div>
-                    <div class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                        <div class="card">.col</div>
-                    </div>
-                </div>
-                <div>
-                    <pre>
-                        <code class="language-html">
-                            <script type="text/plane">
-                                <div class="tl-grid mobile col-1 col-xsm-2 col-md-3 col-lg-6 text-center">
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                    <div>.col</div>
-                                </div>
-                            </script>
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <h2 class="pt-4">Section</h2>
-            <h6>Sections in HTML are grouping elements that help organize the content of a web page. They can be used to divide content into blocks with uniform style for better readability and maintenance.</h6>
-            <div class="tl-grid col pt-3">
-                <div>
-                    <div class="tl-grid col pt-3">
-                        <div>
-                            <section class="section">
-                                <h1>Section Small</h1>
-                                <p class="h6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa illum omnis ex consequuntur enim dolor quos, harum blanditiis sed soluta temporibus eos iure et quibusdam, voluptate dicta rerum? Cupiditate, esse?</p>
-                            </section>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <section class="section">
-                                            <h1>Section Small</h1>
-                                            <p class="h6">Lorem ipsum dolor</p>
-                                        </section>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-                    <div class="tl-grid col pt-3">
-                        <div>
-                            <section class="section md"> 
-                                <h1>Section Medium</h1>
-                                <p class="h6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa illum omnis ex consequuntur enim dolor quos, harum blanditiis sed soluta temporibus eos iure et quibusdam, voluptate dicta rerum? Cupiditate, esse?</p>
-                            </section>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <section class="section md">
-                                            <h1>Section Medium</h1>
-                                            <p class="h6">Lorem ipsum dolor</p>
-                                        </section>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-                    <div class="tl-grid col pt-3">
-                        <div>
-                            <section class="section lg">
-                                <h1>Section Large</h1>
-                                <p class="h6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa illum omnis ex consequuntur enim dolor quos, harum blanditiis sed soluta temporibus eos iure et quibusdam, voluptate dicta rerum? Cupiditate, esse?</p>
-                            </section>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <section class="section lg">
-                                            <h1>Section Large</h1>
-                                            <p class="h6">Lorem ipsum dolor</p>
-                                        </section>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="pb-4">
-            <div class="tl-grid col-md-3">
-                <div class="span-md-2">
-                    <div class="card">
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
-                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
-                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
-                    </div>
-                    <div class="card">
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, aperiam iure. Molestias
-                            perferendis quibusdam consequuntur magni, odit eveniet commodi molestiae sunt laboriosam
-                            deleniti ea unde? Nobis labore accusamus adipisci natus!</p>
-                    </div>
-                </div>
-                <div class="card d-flex flex-column justify-content-center">
-                        <span
-                        class="fs-3 fw-semibold lh-base font-monospace text-center text-decoration-underline text-uppercase text-nowrap text-muted pb-4">
-                        Forms</span>
-                    <form>
-                        <input type="text" disabled class="tl-form-outlined tl-focus-secondary" placeholder="Outline">
-                        <input type="text" class="tl-form-filled tl-focus-accent" placeholder="Filled">
-                        <input type="text" class="tl-form-standard tl-focus-negative" placeholder="Standart">
-                        <div class="tl-grid col-1 col-md-2 pt-3">
-                            <button class="btn primary rounded m-0">Send</button>
-                            <button class="btn dark">Reset</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-        <div class="pb-4">
-            <a href="#" class="tl-display-5 text-uppercase text-decoration-none">Buttons</a>
-            <p>Buttons are essential elements in a website's user interface, allowing users to perform actions with ease. TLux offers a wide selection of customizable button styles to meet the design and functionality needs of your project.</p>
-            <div class="tl-grid gap-3 pt-3 pb-4">
-                <div>
-                    <h3>Clasic</h3>
-                    <div class="tl-grid col">
-                        <div class="btn-container">
-                            <a class="btn">Anchor</a>
-                            <button class="btn">Button</button>
-                            <input class="btn" type="submit" value="Submit input"/>
-                            <input class="btn" type="reset" value="Reset input">
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <a class="btn">Anchor</a>
-                                        <button class="btn">Button</button>
-                                        <input class="btn" type="submit" value="Submit input"/>
-                                        <input class="btn" type="reset" value="Reset input">
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <h3>Colors</h3>
-                    <div class="tl-grid col">
-                        <div>
-                            <div class="btn-container">
-                                <button class="btn primary">Primary</button>
-                                <button class="btn accent">Link</button>
-                            </div>
-                            
-                            <div class="btn-container">
-                                <button class="btn info">Info</button>
-                                <button class="btn positive">Success</button>
-                                <button class="btn warning">Warning</button>
-                                <button class="btn negative">Danger</button>
-                            </div>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <div class="btn-container">
-                                            <button class="btn primary">Primary</button>
-                                            <button class="btn accent">Link</button>
-                                        </div>
-                                        
-                                        <div class="btn-container">
-                                            <button class="btn info">Info</button>
-                                            <button class="btn positive">Success</button>
-                                            <button class="btn warning">Warning</button>
-                                            <button class="btn negative">Danger</button>
-                                        </div>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <h3>Outline</h3>
-                    <div class="tl-grid col">
-                        <div>
-                            <div class="btn-container">
-                                <button class="btn outline">Outline</button>
-                                <button class="btn positive outline">Outline</button>
-                                <button class="btn warning outline">Outline</button>
-                                <button class="btn negative outline">Outline</button>
-                            </div>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                        <button class="btn outline">Outline</button>
-                                        <button class="btn positive outline">Outline</button>
-                                        <button class="btn warning outline">Outline</button>
-                                        <button class="btn negative outline">Outline</button>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <h3>Unline</h3>
-                    <div class="tl-grid col">
-                        <div>
-                            <div class="btn-container">
-                                <button class="btn unline">Unline</button>
-                                <button class="btn positive unline">Unline</button>
-                                <button class="btn warning unline">Unline</button>
-                                <button class="btn negative unline">Unline</button>
-                            </div>
-                        </div>
-                        <div>
-                            <pre>
-                                <code class="language-html">
-                                    <script type="text/plane">
-                                            <button class="btn unline">Unline</button>
-                                            <button class="btn positive unline">Unline</button>
-                                            <button class="btn warning unline">Unline</button>
-                                            <button class="btn negative unline">Unline</button>
-                                    </script>
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-
-                </div>
-                <h3>Disabled</h3>
-                <div class="tl-grid col">
-                    <div class="btn-container">
-                        <button class="btn" disabled>Disabled</button>
-                        <button class="btn primary" disabled>Disabled</button>
-                        <button class="btn secondary outline" disabled>Disabled</button>
-                        <button class="btn accent unline" disabled>Disabled</button>
-                    </div>
-                    <div>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plane">
-                                    <button class="btn" disabled>Disabled</button>
-                                    <button class="btn primary" disabled>Disabled</button>
-                                    <button class="btn secondary outline" disabled>Disabled</button>
-                                    <button class="btn accent unline" disabled>Disabled</button>
-                                </script>
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <h3>Sizes</h3>
-                <div class="tl-grid col">
-                    <div class="btn-container">
-                        <button class="btn sm">Small</button>
-                        <button class="btn">Normal</button>
-                        <button class="btn md">Medium</button>
-                        <button class="btn lg">Large</button>
-                    </div>
-                    <div>
-                        <pre class="w-100">
-                            <code class="language-html" >
-                                <script type="text/plane">
-                                    <button class="btn sm">Small</button>
-                                    <button class="btn">Normal</button>
-                                    <button class="btn md">Medium</button>
-                                    <button class="btn lg">Large</button>
-                                </script>
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <h3>Resonsive extended</h3>
-                <div class="tl-grid col col-md-2">
-                    <div>
-                        <div class="btn-container col w-100 m0 is-fullwidth">
-                            <button class="btn sm full-w">Small</button>
-                            <button class="btn full-w">Normal</button>
-                            <button class="btn md full-w">Medium</button>
-                            <button class="btn lg full-w">Large</button>
-                        </div>
-                    </div>
-                    <div>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plane">
-                                    <button class="btn sm full-w">Small</button>
-                                    <button class="btn full-w">Normal</button>
-                                    <button class="btn md full-w">Medium</button>
-                                    <button class="btn lg full-w">Large</button>
-                                </script>
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-   
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-<script>
-Prism.plugins.NormalizeWhitespace.setDefaults({
-	'remove-trailing': true,
-	'remove-indent': true,
-	'left-trim': true,
-	'right-trim': true,
-	/*'break-lines': 80,
-	'indent': 2,
-	'remove-initial-line-feed': false,
-	'tabs-to-spaces': 4,
-	'spaces-to-tabs': 4*/
-});
+    <script>
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+        "remove-trailing": true,
+        "remove-indent": true,
+        "left-trim": true,
+        "right-trim": true,
+        /*'break-lines': 80,
+            'indent': 2,
+            'remove-initial-line-feed': false,
+            'tabs-to-spaces': 4,
+            'spaces-to-tabs': 4*/
+      });
 
+      (function () {
+        if (typeof Prism === "undefined" || typeof document === "undefined") {
+          return;
+        }
 
-(function () {
-  if (typeof Prism === 'undefined' || typeof document === 'undefined') {
-    return;
-  }
+        /**
+         * Agrega un botón personalizado como hermano del elemento de la barra de herramientas.
+         *
+         * @param {HTMLElement} element El elemento del bloque de código.
+         * @param {Function} onClick El evento que se llamará cuando se haga clic en el botón.
+         */
+        function addCodeButton(element, onClick) {
+          // Obtener el nombre del lenguaje de programación a partir de la clase 'language-*'
+          var languageName = element.classList.value.replace("language-", "");
 
-  /**
-   * Agrega un botón personalizado como hermano del elemento de la barra de herramientas.
-   *
-   * @param {HTMLElement} element El elemento del bloque de código.
-   * @param {Function} onClick El evento que se llamará cuando se haga clic en el botón.
-   */
-  function addCodeButton(element, onClick) {
-    // Obtener el nombre del lenguaje de programación a partir de la clase 'language-*'
-    var languageName = element.classList.value.replace('language-', '');
+          var button = document.createElement("div");
+          button.textContent = languageName;
+          button.classList.add("pre-label");
+          button.style.backgroundColor = getComputedStyle(
+            element.parentNode
+          ).backgroundColor; // Obtener el color de fondo del elemento <pre>
+          button.style.color = getComputedStyle(element.parentNode).color;
+          button.addEventListener("click", function () {
+            onClick(element);
+          });
+          // Agregar el botón como hermano del elemento de la barra de herramientas
+          element.parentNode.insertAdjacentElement("beforebegin", button);
+        }
 
-    var button = document.createElement('div');
-    button.textContent = languageName;
-    button.classList.add('pre-label');
-    button.style.backgroundColor = getComputedStyle(element.parentNode).backgroundColor; // Obtener el color de fondo del elemento <pre>
-    button.style.color = getComputedStyle(element.parentNode).color;
-    button.addEventListener('click', function () {
-      onClick(element);
-    });
-    // Agregar el botón como hermano del elemento de la barra de herramientas
-    element.parentNode.insertAdjacentElement('beforebegin', button);
-  }
-
-  // Ejemplo de uso
-  Prism.hooks.add('complete', function (env) {
-    addCodeButton(env.element, function (element) {
-      eval(element.textContent);
-    });
-  });
-})();
+        // Ejemplo de uso
+        Prism.hooks.add("complete", function (env) {
+          addCodeButton(env.element, function (element) {
+            eval(element.textContent);
+          });
+        });
+      })();
     </script>
   </body>
 </html>
